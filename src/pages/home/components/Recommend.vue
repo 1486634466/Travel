@@ -2,7 +2,7 @@
 <div>
   <div class="title">热销推荐</div>
   <ul>
-    <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+    <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" />
        <div class="item-info">
        <p class="item-title">{{item.title}}</p>
@@ -18,25 +18,8 @@
 
 export default {
   name:'HomeRecommend',
-  data(){
-    return{
-      recommendList:[{
-        id:'0001',
-        imgUrl:'http://img1.qunarzz.com/sight/p0/1902/84/84696f368bbec10da3.img.jpg_200x200_50323152.jpg',
-        title:'北京世界园艺博览会',
-        desc:'北京世园会办会主题为“绿色生活、美丽家园”'
-      },{
-        id:'0002',
-        imgUrl:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-        title:'故宫',
-        desc:'世界五大宫之首，穿越与您近在咫尺'
-      },{
-        id:'0003',
-        imgUrl:'http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_200x200_2458ffb2.jpg',
-        title:'八达岭长城',
-        desc:'不到长城非好汉'
-      }]
-    }
+  props:{
+    list:Array
   }
 }
 </script>
